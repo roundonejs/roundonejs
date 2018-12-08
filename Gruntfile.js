@@ -4,7 +4,10 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         eslint: {
             options: {configFile: 'eslint.json'},
-            files: ['Gruntfile.js']
+            files: [
+                'Gruntfile.js',
+                'src/*.js'
+            ]
         }
     });
 
