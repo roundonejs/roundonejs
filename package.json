@@ -1,0 +1,30 @@
+{
+  "name": "mugenjs",
+  "version": "1.0.0",
+  "description": "Run M.U.G.E.N games in browser.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mugenjs/mugenjs.git"
+  },
+  "keywords": [
+    "mugen",
+    "html5",
+    "javascript",
+    "game-engine",
+    "fighting-game"
+  ],
+  "author": "Carlson Santana Cruz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mugenjs/mugenjs/issues"
+  },
+  "homepage": "https://github.com/mugenjs/mugenjs#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-eslint": "^21.0.0"
+  }
+}
