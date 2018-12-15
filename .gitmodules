@@ -1,0 +1,3 @@
+[submodule "third_party/mugenjs_renderer"]
+	path = third_party/mugenjs_renderer
+	url = https://github.com/mugenjs/mugenjs_renderer.git

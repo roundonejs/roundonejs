@@ -1,3 +1,6 @@
+const actions = require('actions');
+const conditions = require('conditions');
+
 class Character {
     constructor(player) {
         this.player = player;
@@ -13,41 +16,46 @@ class Character {
     addDefaultEntries() {
         this.commands.push(new Command('(Jump back (upwards))', '/UB', 1));
         this.commands.push(new Command('(Jump forwards (upwards))', '/UF', 1));
-        
         this.commands.push(new Command('(Walking backwards)', '/B', 1));
         this.commands.push(new Command('(Walking forwards)', '/F', 1));
         this.commands.push(new Command('(Jump neutral (upwards))', '/U', 1));
         this.commands.push(new Command('(Crouching)', '/D', 1));
         this.commands.push(new Command('(Standing)', '', 1));
-        
         this.statesEntries.push(new StateEntry(
-            createActionChangeState(43),
-            [createConditionCommandExecuted('(Jump back (upwards))')]
+            actions.createActionChangeState(43),
+            [conditions.createConditionCommandExecuted('(Jump back (upwards))')]
         ));
         this.statesEntries.push(new StateEntry(
-            createActionChangeState(42),
-            [createConditionCommandExecuted('(Jump forwards (upwards))')]
-        ));
-        
-        this.statesEntries.push(new StateEntry(
-            createActionChangeState(21),
-            [createConditionCommandExecuted('(Walking backwards)')]
-        ));
-        this.statesEntries.push(new StateEntry(
-            createActionChangeState(20),
-            [createConditionCommandExecuted('(Walking forwards)')]
+            actions.createActionChangeState(42),
+            [
+                conditions.createConditionCommandExecuted(
+                    '(Jump forwards (upwards))'
+                )
+            ]
         ));
         this.statesEntries.push(new StateEntry(
-            createActionChangeState(11),
-            [createConditionCommandExecuted('(Crouching)')]
+            actions.createActionChangeState(21),
+            [conditions.createConditionCommandExecuted('(Walking backwards)')]
         ));
         this.statesEntries.push(new StateEntry(
-            createActionChangeState(41),
-            [createConditionCommandExecuted('(Jump neutral (upwards))')]
+            actions.createActionChangeState(20),
+            [conditions.createConditionCommandExecuted('(Walking forwards)')]
         ));
         this.statesEntries.push(new StateEntry(
-            createActionChangeState(0),
-            [createConditionCommandExecuted('(Standing)')]
+            actions.createActionChangeState(11),
+            [conditions.createConditionCommandExecuted('(Crouching)')]
+        ));
+        this.statesEntries.push(new StateEntry(
+            actions.createActionChangeState(41),
+            [
+                conditions.createConditionCommandExecuted(
+                    '(Jump neutral (upwards))'
+                )
+            ]
+        ));
+        this.statesEntries.push(new StateEntry(
+            actions.createActionChangeState(0),
+            [conditions.createConditionCommandExecuted('(Standing)')]
         ));
     }
 }
