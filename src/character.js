@@ -9,6 +9,47 @@ class Character {
         this.commands = [];
         this.statesEntries = [];
     }
+
+    addDefaultEntries() {
+        this.commands.push(new Command('(Jump back (upwards))', '/UB', 1));
+        this.commands.push(new Command('(Jump forwards (upwards))', '/UF', 1));
+        
+        this.commands.push(new Command('(Walking backwards)', '/B', 1));
+        this.commands.push(new Command('(Walking forwards)', '/F', 1));
+        this.commands.push(new Command('(Jump neutral (upwards))', '/U', 1));
+        this.commands.push(new Command('(Crouching)', '/D', 1));
+        this.commands.push(new Command('(Standing)', '', 1));
+        
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(43),
+            [createConditionCommandExecuted('(Jump back (upwards))')]
+        ));
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(42),
+            [createConditionCommandExecuted('(Jump forwards (upwards))')]
+        ));
+        
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(21),
+            [createConditionCommandExecuted('(Walking backwards)')]
+        ));
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(20),
+            [createConditionCommandExecuted('(Walking forwards)')]
+        ));
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(11),
+            [createConditionCommandExecuted('(Crouching)')]
+        ));
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(41),
+            [createConditionCommandExecuted('(Jump neutral (upwards))')]
+        ));
+        this.statesEntries.push(new StateEntry(
+            createActionChangeState(0),
+            [createConditionCommandExecuted('(Standing)')]
+        ));
+    }
 }
 
 class Command {
