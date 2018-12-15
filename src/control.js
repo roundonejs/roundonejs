@@ -1,8 +1,22 @@
 class Control {
     constructor(player, keyMaps) {
         this.player = player;
+        this.player.control = this;
         this.keyMaps = keyMaps;
         this.pressedButtons = [];
+        this.player.buttonPressed = function() {
+            let character = player.character;
+            for (
+                let i = 0, length = character.statesEntries.length;
+                i < length;
+                i++
+            ) {
+                let stateEntry = character.statesEntries[i];
+                if (stateEntry.execute(player)) {
+                    break;
+                }
+            }
+        };
     }
 
     static calculateTrick(startDate, endDate) {
@@ -96,6 +110,7 @@ class Control {
                 'buttons': [],
                 'dateDown': date,
                 'dateReleased': null,
+                'currentHold': true,
                 'hold': false,
                 'release': {
                     active: false,
@@ -107,6 +122,7 @@ class Control {
             currentPressedButton = lastPressedButton;
         }
         Control.addButton(currentPressedButton.buttons, button);
+        player.buttonPressed();
     }
 
     buttonUp(button) {
@@ -120,9 +136,11 @@ class Control {
                     date,
                     pressedButton.dateDown
                 );
+                pressedButton.currentHold = false;
                 break;
             }
         }
+        player.buttonPressed();
     }
 }
 
