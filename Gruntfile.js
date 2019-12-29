@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    const MUGEN_RENDERER = 'third_party/roundonejs_mugen_renderer/';
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -13,9 +14,9 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'dist/roundone.js': [
-                        'third_party/mugenjs_renderer/src/player.js',
-                        'third_party/mugenjs_renderer/src/resource.js',
-                        'third_party/mugenjs_renderer/src/app.js',
+                        MUGEN_RENDERER + 'src/player.js',
+                        MUGEN_RENDERER + 'src/resource.js',
+                        MUGEN_RENDERER + 'src/app.js',
                         'src/actions.js',
                         'src/character.js',
                         'src/conditions.js',
@@ -29,11 +30,9 @@ module.exports = function(grunt) {
                     ['uglifyify']
                 ],
                 alias: {
-                    'player': './third_party/mugenjs_renderer/src/player.js',
-                    'resource': (
-                        './third_party/mugenjs_renderer/src/resource.js'
-                    ),
-                    'app': './third_party/mugenjs_renderer/src/app.js',
+                    'player': './' + MUGEN_RENDERER + 'src/player.js',
+                    'resource': './' + MUGEN_RENDERER + 'src/resource.js',
+                    'app': './' + MUGEN_RENDERER + 'src/app.js',
                     'actions': './src/actions.js',
                     'character': './src/character.js',
                     'conditions': './src/conditions.js',
