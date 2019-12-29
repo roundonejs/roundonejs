@@ -1,5 +1,5 @@
 {
-  "name": "mugenjs",
+  "name": "roundonejs",
   "version": "1.0.0",
   "description": "Run M.U.G.E.N games in browser.",
   "scripts": {
@@ -19,9 +19,9 @@
   "author": "Carlson Santana Cruz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mugenjs/mugenjs/issues"
+    "url": "https://github.com/roundonejs/roundonejs/issues"
   },
-  "homepage": "https://github.com/mugenjs/mugenjs#readme",
+  "homepage": "https://github.com/roundonejs/roundonejs#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",

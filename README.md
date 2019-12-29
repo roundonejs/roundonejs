@@ -1,10 +1,10 @@
-# MugenJS
+# RoundOne.js
 
 Run M.U.G.E.N games in browser.
 
 ## Donate
   
-If you'd like to monetarily support MugenJS development, you can:
+If you'd like to monetarily support RoundOne.js development, you can:
 
 * Donate Bitcoin to **38aexhxMY65Uzuw1Tvg1TvGEVgFeZYqzBR** wallet address;
 * Donate Ethereum to **0xd7446224eb2da4f41f5f68f82be01e1f5fa1940e** wallet address;
