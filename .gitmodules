@@ -1,3 +1,3 @@
-[submodule "third_party/mugenjs_renderer"]
-	path = third_party/mugenjs_renderer
-	url = https://github.com/mugenjs/mugenjs_renderer.git
+[submodule "third_party/roundonejs_mugen_renderer"]
+	path = third_party/roundonejs_mugen_renderer
+	url = https://github.com/roundonejs/roundonejs_mugen_renderer.git
