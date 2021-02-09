@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         browserify: {
             dist: {
                 files: {
-                    'dist/roundone.js': [
+                    'build/roundone.js': [
                         MUGEN_RENDERER + 'src/player.js',
                         MUGEN_RENDERER + 'src/resource.js',
                         MUGEN_RENDERER + 'src/app.js',
