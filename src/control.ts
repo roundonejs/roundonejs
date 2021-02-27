@@ -138,7 +138,7 @@ export class Control {
             currentPressedButton = lastPressedButton;
         }
         Control.addButton(currentPressedButton.buttons, button);
-        player.buttonPressed();
+        this.player.buttonPressed();
     }
 
     buttonUp(button) {
@@ -156,6 +156,6 @@ export class Control {
                 break;
             }
         }
-        player.buttonPressed();
+        this.player.buttonPressed();
     }
 }
