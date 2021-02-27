@@ -1,4 +1,20 @@
+interface PressedButton {
+    buttons: string[];
+    dateDown: Date;
+    dateReleased: Date;
+    currentHold: boolean;
+    hold: boolean;
+    release: {
+        active: boolean;
+        time: number;
+    };
+}
+
 export class Control {
+    player: any;
+    keyMaps: string[];
+    pressedButtons: PressedButton[];
+
     constructor(player, keyMaps) {
         this.player = player;
         this.player.control = this;

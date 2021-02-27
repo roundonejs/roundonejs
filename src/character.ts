@@ -2,6 +2,11 @@ import * as actions from './actions';
 import * as conditions from './conditions';
 
 export class Character {
+    player: any;
+    name: string;
+    commands: Command[];
+    statesEntries: StateEntry[];
+
     constructor(player) {
         this.player = player;
         this.player.character = this;
@@ -60,7 +65,19 @@ export class Character {
     }
 }
 
+interface ParsedCommand {
+    keys: string[];
+    hold: boolean;
+    directionOnly: boolean;
+    release: {active: boolean, time: number};
+    noOtherKeys: boolean;
+}
+
 export class Command {
+    name: string;
+    command: ParsedCommand[];
+    time: number;
+
     constructor(name, command, time) {
         this.name = name;
         this.command = Command.parseCommand(command);
@@ -102,7 +119,13 @@ export class Command {
     }
 }
 
+type Action = (player: any) => void;
+type Condition = (player: any) => boolean;
+
 export class StateEntry {
+    action: Action;
+    conditions: Condition[];
+
     constructor(action, conditions) {
         this.action = action;
         this.conditions = conditions;
