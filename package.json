@@ -26,7 +26,9 @@
     "url": "https://github.com/roundonejs/roundonejs/issues"
   },
   "homepage": "https://github.com/roundonejs/roundonejs#readme",
-  "dependencies": {},
+  "dependencies": {
+    "roundonejs_mugen_renderer": "https://github.com/roundonejs/roundonejs_mugen_renderer.git"
+  },
   "devDependencies": {
     "typescript": "^4.2.2"
   }

@@ -1,8 +1,9 @@
 import * as actions from './actions';
 import * as conditions from './conditions';
+import {PlayerRoundOne} from './PlayerRoundOne';
 
 export class Character {
-    player: any;
+    player: PlayerRoundOne;
     name: string;
     commands: Command[];
     statesEntries: StateEntry[];
@@ -119,8 +120,8 @@ export class Command {
     }
 }
 
-type Action = (player: any) => void;
-type Condition = (player: any) => boolean;
+type Action = (player: PlayerRoundOne) => void;
+type Condition = (player: PlayerRoundOne) => boolean;
 
 export class StateEntry {
     action: Action;

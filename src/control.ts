@@ -1,3 +1,5 @@
+import {PlayerRoundOne} from './PlayerRoundOne';
+
 interface PressedButton {
     buttons: string[];
     dateDown: Date;
@@ -11,7 +13,7 @@ interface PressedButton {
 }
 
 export class Control {
-    player: any;
+    player: PlayerRoundOne;
     keyMaps: string[];
     pressedButtons: PressedButton[];
 
