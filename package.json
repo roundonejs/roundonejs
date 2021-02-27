@@ -2,6 +2,8 @@
   "name": "roundonejs",
   "version": "1.0.0",
   "description": "Run M.U.G.E.N games in browser.",
+  "main": "lib/index.js",
+  "types": "lib",
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "install": "npm run build",
