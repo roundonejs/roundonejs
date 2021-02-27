@@ -1,4 +1,4 @@
-function createActionChangeState(action) {
+export function createActionChangeState(action) {
     let changeState = function(player) {
         if (player.action !== action) {
             player.action = action;
@@ -8,7 +8,3 @@ function createActionChangeState(action) {
     };
     return changeState;
 }
-
-module.exports = {
-    createActionChangeState: createActionChangeState
-};

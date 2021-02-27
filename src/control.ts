@@ -1,4 +1,4 @@
-class Control {
+export class Control {
     constructor(player, keyMaps) {
         this.player = player;
         this.player.control = this;
@@ -143,7 +143,3 @@ class Control {
         player.buttonPressed();
     }
 }
-
-module.exports = {
-    Control: Control
-};

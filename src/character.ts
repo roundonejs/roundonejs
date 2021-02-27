@@ -1,7 +1,7 @@
-const actions = require('actions');
-const conditions = require('conditions');
+import * as actions from './actions';
+import * as conditions from './conditions';
 
-class Character {
+export class Character {
     constructor(player) {
         this.player = player;
         this.player.character = this;
@@ -60,7 +60,7 @@ class Character {
     }
 }
 
-class Command {
+export class Command {
     constructor(name, command, time) {
         this.name = name;
         this.command = Command.parseCommand(command);
@@ -102,7 +102,7 @@ class Command {
     }
 }
 
-class StateEntry {
+export class StateEntry {
     constructor(action, conditions) {
         this.action = action;
         this.conditions = conditions;
@@ -120,9 +120,3 @@ class StateEntry {
         return true;
     }
 }
-
-module.exports = {
-    Character: Character,
-    Command: Command,
-    StateEntry: StateEntry
-};

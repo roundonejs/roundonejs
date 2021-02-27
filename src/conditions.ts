@@ -1,4 +1,4 @@
-function createConditionCommandExecuted(commandName) {
+export function createConditionCommandExecuted(commandName) {
     let commandExecuted = function(player) {
         let characterCommands = player.character.commands;
         let pressedButtons = player.control.pressedButtons;
@@ -37,7 +37,3 @@ function createConditionCommandExecuted(commandName) {
     };
     return commandExecuted;
 }
-
-module.exports = {
-    createConditionCommandExecuted: createConditionCommandExecuted
-};
